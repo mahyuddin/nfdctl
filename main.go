@@ -1,4 +1,4 @@
-package nfdctl
+package main
 
 import (
 	"os"
