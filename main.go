@@ -11,7 +11,15 @@ import (
 	"github.com/go-ndn/persist"
 )
 
-func func main() {
+var (
+	command = flag.String("command", "status", "nfdctl command")
+)
+
+var (
+	key ndn.Key
+)
+
+func main() {
 	
 	// connect to nfd
 	conn, err := packet.Dial("tcp", ":6363")
@@ -31,5 +39,5 @@ func func main() {
 	}
 	defer pem.Close()
 	key, _ := ndn.DecodePrivateKey(pem)
-	
+
 }
